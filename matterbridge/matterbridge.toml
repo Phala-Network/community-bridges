@@ -1,0 +1,30 @@
+[discord]
+[discord.phala]
+Token="YOUR_DISCORD_BOT_TOKEN"
+Server="YOUR_DISCORD_SERVER_ID"
+UseUserName=true
+UseDiscriminator=true
+AutoWebhooks=true
+
+[matrix]
+[matrix.phala]
+#Server is your homeserver (eg https://matrix.org)
+Server="https://matrix.org"
+Login="YOUR_DEDICATED_ACCOUNT_USERNAME"
+Password="YOUR_DEDICATED_ACCOUNT_PASSWORD"
+
+[general]
+RemoteNickFormat="{NICK} "
+
+[[gateway]]
+    name = "mygateway"
+    enable=true
+
+    [[gateway.inout]]
+    account = "discord.phala"
+    channel="general"
+
+    [[gateway.inout]]
+    account = "matrix.phala"
+    channel="#YOUR_MATRIX_CHANNEL:YOUR_HOME_SERVER"
+
