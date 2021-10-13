@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: matterbridge-deployment
+  labels:
+    app: matterbridge
+spec:  
+  replicas: 3  
+  selector: 
+    matchLabels:
+      app: matterbridge
+  template:    
+    metadata:      
+      labels:        
+        app: matterbridge    
+    spec:      
+      containers:      
+      - name: matterbridge  
+        image: YOUR_DOCKER_HUB_USERNAME/matterbridge
